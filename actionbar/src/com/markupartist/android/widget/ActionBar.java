@@ -84,9 +84,29 @@ public class ActionBar extends RelativeLayout implements OnClickListener {
     }
 
     public void clearHomeAction() {
-        mHomeLayout.setVisibility(View.GONE);
+    	setHomeActionVisibility(View.GONE);
     }
 
+    /**
+     * Returns the visibility status for the Home button area.
+     * 
+     * @return One of {@link View#VISIBLE}, {@link View#INVISIBLE},
+     *   or {@link View#GONE}.
+     */
+    public void setHomeActionVisibility(int visibility) {
+        mHomeLayout.setVisibility(visibility);
+    }
+
+    /**
+     * Returns the visibility status for the Home button area.
+     * 
+     * @return One of {@link View#VISIBLE}, {@link View#INVISIBLE},
+     *   or {@link View#GONE}.
+     */
+    public int getHomeActionVisibility() {
+        return mHomeLayout.getVisibility();
+    }
+    
     /**
      * Shows the provided logo to the left in the action bar.
      * 
@@ -131,7 +151,7 @@ public class ActionBar extends RelativeLayout implements OnClickListener {
     /**
      * Returns the visibility status for the progress bar.
      * 
-     * @param One of {@link View#VISIBLE}, {@link View#INVISIBLE},
+     * @return One of {@link View#VISIBLE}, {@link View#INVISIBLE},
      *   or {@link View#GONE}.
      */
     public int getProgressBarVisibility() {
